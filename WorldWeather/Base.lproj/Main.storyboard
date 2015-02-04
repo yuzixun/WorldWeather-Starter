@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H1p-Uh-vWS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H1p-Uh-vWS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -196,7 +196,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="330"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="City" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="omh-zH-HAS" userLabel="CityLabel">
-                                        <rect key="frame" x="0.0" y="10" width="600" height="177"/>
+                                        <rect key="frame" x="0.0" y="150" width="600" height="177"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="150"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -226,13 +226,31 @@
                                     <constraint firstAttribute="centerX" secondItem="bt7-OR-lfe" secondAttribute="centerX" id="sAy-X4-8Fn"/>
                                     <constraint firstItem="omh-zH-HAS" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="bt7-OR-lfe" secondAttribute="top" constant="50" id="teS-vo-IjP"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="EPz-ac-c4l"/>
+                                    </mask>
+                                </variation>
                             </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2s2-v9-9XT">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="SZZ-xw-y8S"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="988-rV-JtB" kind="embed" id="9MZ-dy-5t1"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="2s2-v9-9XT" secondAttribute="trailing" id="4oV-2M-eDw"/>
+                            <constraint firstItem="2s2-v9-9XT" firstAttribute="leading" secondItem="yY8-cW-ib9" secondAttribute="leading" id="Cmp-BW-IFh"/>
                             <constraint firstItem="Ysq-o1-8AH" firstAttribute="height" secondItem="yY8-cW-ib9" secondAttribute="height" id="N6Z-wD-ry9"/>
                             <constraint firstItem="Ysq-o1-8AH" firstAttribute="width" secondItem="yY8-cW-ib9" secondAttribute="width" id="TLp-g5-dL9"/>
                             <constraint firstAttribute="centerX" secondItem="Ysq-o1-8AH" secondAttribute="centerX" id="eXO-x4-4FV"/>
+                            <constraint firstItem="2s2-v9-9XT" firstAttribute="bottom" secondItem="omh-zH-HAS" secondAttribute="top" id="hUk-fs-0Ca"/>
+                            <constraint firstItem="2s2-v9-9XT" firstAttribute="top" secondItem="MAh-5B-xbu" secondAttribute="bottom" id="jiE-N6-qeg"/>
                             <constraint firstAttribute="centerY" secondItem="Ysq-o1-8AH" secondAttribute="centerY" id="zqA-ka-krD"/>
                         </constraints>
                     </view>
@@ -250,7 +268,7 @@
             <objects>
                 <collectionViewController storyboardIdentifier="dailyWeatherCollectionView" id="988-rV-JtB" userLabel="Daily Weather Collection View" customClass="DailyWeatherCollectionViewController" customModule="WorldWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="yMs-tn-Vxl">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="150"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.22101389630000001" green="0.50662462070000003" blue="0.73999521680000002" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="2" minimumInteritemSpacing="2" id="dVr-V4-e44">
