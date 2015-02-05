@@ -39,6 +39,7 @@ class WeatherTextViewController: UIViewController, CityWeatherContainer {
             if isViewLoaded() {
                 configureView()
             }
+            provideDataToChildViewControllers()
         }
     }
     
@@ -48,6 +49,10 @@ class WeatherTextViewController: UIViewController, CityWeatherContainer {
         // Do any additional setup after loading the view.
         configureView()
         provideDataToChildViewControllers();
+        let traitOverride = UITraitCollection(horizontalSizeClass: .Compact)
+        for vc in childViewControllers as [UIViewController] {
+            setOverrideTraitCollection(traitOverride, forChildViewController: vc)
+        }
     }
     
     // MARK: - Utility methods
@@ -61,9 +66,9 @@ class WeatherTextViewController: UIViewController, CityWeatherContainer {
     private func provideDataToChildViewControllers(){
         for vc in childViewControllers {
             if let weeklyWeatherContainer = vc as? WeeklyWeatherContainer {
-            if let weeklyWeather = cityWeather?.weather {
-            weeklyWeatherContainer.dailyWeather = weeklyWeather
-            }
+                if let weeklyWeather = cityWeather?.weather {
+                    weeklyWeatherContainer.dailyWeather = weeklyWeather
+                }
             }
         }
     }

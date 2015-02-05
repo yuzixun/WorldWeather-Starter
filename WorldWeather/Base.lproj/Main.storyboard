@@ -96,7 +96,7 @@
         <!--Navigation Controller-->
         <scene sceneID="r7l-gg-dq7">
             <objects>
-                <navigationController id="vC3-pB-5Vb" sceneMemberID="viewController">
+                <navigationController hidesBarsOnTap="YES" hidesBarsWhenVerticallyCompact="YES" id="vC3-pB-5Vb" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="DjV-YW-jjY">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -200,6 +200,9 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="150"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=compact" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="150" width="300" height="177"/>
+                                        </variation>
                                         <variation key="widthClass=compact">
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="100"/>
                                         </variation>
@@ -231,12 +234,22 @@
                                         <exclude reference="EPz-ac-c4l"/>
                                     </mask>
                                 </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="EPz-ac-c4l"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2s2-v9-9XT">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="SZZ-xw-y8S"/>
                                 </constraints>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="SZZ-xw-y8S"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <segue destination="988-rV-JtB" kind="embed" id="9MZ-dy-5t1"/>
                                 </connections>
@@ -253,6 +266,17 @@
                             <constraint firstItem="2s2-v9-9XT" firstAttribute="top" secondItem="MAh-5B-xbu" secondAttribute="bottom" id="jiE-N6-qeg"/>
                             <constraint firstAttribute="centerY" secondItem="Ysq-o1-8AH" secondAttribute="centerY" id="zqA-ka-krD"/>
                         </constraints>
+                        <variation key="heightClass=compact">
+                            <mask key="subviews">
+                                <exclude reference="2s2-v9-9XT"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="4oV-2M-eDw"/>
+                                <exclude reference="Cmp-BW-IFh"/>
+                                <exclude reference="hUk-fs-0Ca"/>
+                                <exclude reference="jiE-N6-qeg"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="cityNameLabel" destination="omh-zH-HAS" id="WDa-5q-ick"/>
@@ -338,7 +362,7 @@
     </scenes>
     <resources>
         <image name="Bangkok" width="599" height="200"/>
-        <image name="cloud" width="300" height="197"/>
+        <image name="cloud" width="500" height="322"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6S0-TO-JiA"/>

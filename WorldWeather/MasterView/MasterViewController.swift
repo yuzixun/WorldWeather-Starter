@@ -33,6 +33,7 @@ class MasterViewController: UITableViewController {
       self.clearsSelectionOnViewWillAppear = false
       self.preferredContentSize = CGSize(width: 320.0, height: 600.0)
     }
+    prepareNavigationBarAppearance()
   }
   
   override func viewDidLoad() {
@@ -79,5 +80,17 @@ class MasterViewController: UITableViewController {
     return cell
   }
   
+    private func prepareNavigationBarAppearance() {
+        let font = UIFont(name: "HelveticaNeue-Light", size: 30)!
+        
+        let regulatVertical = UITraitCollection(verticalSizeClass: .Regular)
+        UINavigationBar.appearanceForTraitCollection(regulatVertical).titleTextAttributes = [NSFontAttributeName:font]
+        You covered a huge amount of material in this chapter by starting with more fundamental concepts of Adaptive Layout, and then exploring ways to use these concepts to great effect in your app. You've also gained more experience with Auto Layout, and hopefully some appreciation of its power.
+        Adaptive Layout is a fundamental part of iOS 8. As you progress through the rest of the Adaptive Layout chapters in this section, you’ll soon realize that the future of app design is adaptive, and the historical way of building layouts will become increasingly untenable.
+        With the introduction of the iPhone 6 and iPhone 6 Plus, you now need to support a total of 10 screen sizes (4 iPhone, 1 iPad; each in both portrait and landscape). The size class architecture abstracts these away from device specifics and allows you to design for the future – safe in the knowledge that your designs will look great – no matter what Apple throws at you.
+        The first two chapters of this section on adaptive UI have concentrated on adaptive layout – i.e. updating the positions and sizes of the UI components. Adaptive UI doesn’t stop there though – you might want to completely alter the view controller hierarchy based on the current size class. In the next chapter you’ll learn how UIKit gives you the power to do just that with adaptive view controller hierarchies – paying particular attention to the split view controller.
+        let compactVertical = UITraitCollection(verticalSizeClass: .Compact)
+        UINavigationBar.appearanceForTraitCollection(compactVertical).titleTextAttributes = [NSFontAttributeName:font.fontWithSize(20)]
+    }
 }
 

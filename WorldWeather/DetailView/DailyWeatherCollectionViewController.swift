@@ -29,8 +29,7 @@ import UIKit
 let reuseIdentifier = "DailyWeatherCell"
 
 
-class DailyWeatherCollectionViewController:
-    UICollectionViewController, WeeklyWeatherContainer {
+class DailyWeatherCollectionViewController:UICollectionViewController, WeeklyWeatherContainer {
   var dailyWeather: [DailyWeather] = [DailyWeather]() {
   didSet {
     collectionView?.reloadData()
